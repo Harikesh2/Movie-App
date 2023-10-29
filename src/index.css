@@ -116,6 +116,12 @@ body {
         margin: 5px;
       
   }
+  .Remove-btn{
+    background-color: #db2828;
+        color: #fff;
+        margin: 5px;
+
+  }
   .unfavourite-btn {
     background-color: #db2828;
     color: #fff;
