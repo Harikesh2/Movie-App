@@ -1,11 +1,9 @@
-import {Component} from "react";
+import React from "react";
 
 
-class MovieCard extends Component{
-    
-    render(){
-        const {title,plot,price,rating,star,fav,cart,poster}= this.props.movies;
-        const {addStars,movies,decStars,favBtn,cartBtn} = this.props;
+function MovieCard(props){
+        const {title,plot,price,rating,star,fav,cart,poster}= props.movies;
+        const {addStars,movies,decStars,favBtn,cartBtn} = props;
         return (
             <div className="main">
               <div className="movie-card">
@@ -42,7 +40,7 @@ class MovieCard extends Component{
                             </div>
                             {fav?<button className="unfavourite-btn" onClick={()=>favBtn(movies)}>Un-Favourite</button>: <button className="favourite-btn" onClick={()=>favBtn(movies)}>Favourite</button>}
 
-                            {cart?<button className="cart-btn" onClick={()=>cartBtn(movies)}>Add to Cart</button>:     <button className="Remove-btn" onClick={()=> cartBtn(movies)}>Remove from Cart</button>}                        
+                            {cart?<button className="Remove-btn" onClick={()=> cartBtn(movies)}>Remove from Cart</button>:<button className="cart-btn" onClick={()=>cartBtn(movies)}>Add to Cart</button>}                        
                             
                         </div>
                         
@@ -53,6 +51,6 @@ class MovieCard extends Component{
               </div>   
             </div>
         )
-    }
+    
 }
 export default MovieCard;
